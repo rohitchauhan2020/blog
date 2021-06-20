@@ -20,6 +20,6 @@ Route::get('/', function () {
 });
 Route::get('student', 'studentcontroller@student')->name('student');
 
-Route::post('student/store', 'studentcontroller@store')->name('student_store');
+Route::post('student/store', 'studentcontroller@store')->name('student_store')->middleware('age');
 
 
