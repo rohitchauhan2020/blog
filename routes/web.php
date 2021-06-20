@@ -18,3 +18,8 @@ Route::get('/', function () {
     //return asset('storage/event_button.gif');
     return view('welcome');
 });
+Route::get('student', 'studentcontroller@student')->name('student');
+
+Route::post('student/store', 'studentcontroller@store')->name('student_store');
+
+
