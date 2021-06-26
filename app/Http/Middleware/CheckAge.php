@@ -15,7 +15,7 @@ class CheckAge
      */
     public function handle($request, Closure $next)
     {
-      //  dd($request->get('age'));
+       // dd($request->get('age'));
        if($request->get('age') < 18){
            return redirect(route("student"));
        }
