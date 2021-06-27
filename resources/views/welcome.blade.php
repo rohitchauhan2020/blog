@@ -108,6 +108,8 @@
 
                     <a href="{{route('admint.first')}}">Named Admin First Route</a>
 
+                    
+
                 </div>
             </div>
         </div>

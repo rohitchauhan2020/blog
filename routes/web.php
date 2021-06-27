@@ -18,6 +18,17 @@ Route::get('/', function () {
     //return asset('storage/event_button.gif');
     return view('welcome');
 });
+
+
+Route::get('test/{xyz?}/{prt?}', function ($xyz,$prt) {
+   echo "this is prt param :"; print_r($prt);
+   echo "<br />";
+    print_r($xyz);die;
+
+    //return asset('storage/event_button.gif');
+    return view('welcome');
+});
+
 Route::get('student', 'studentcontroller@student')->name('student');
 
 Route::post('student/store', 'studentcontroller@store')->name('student_store')->middleware('age');
@@ -49,8 +60,10 @@ Route::name("admint.")->prefix("admin")->middleware(['age'])->group( function()
         {  
             echo "named first route";  
         })->name("first");  
-        Route::get('/second',function()  
+        Route::get('/second',function(Illuminate\Http\Request $request)  
         {  
+            print_r($request->all());die;
+            
             echo "second route";  
         })->name("second");  
         Route::get('/third',function()  
