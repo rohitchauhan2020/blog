@@ -50,6 +50,8 @@ Route::prefix("admin")->group( function()
         });
 });
 
+Route::resource('posts', PostsController::class);
+
 // route("admint.first") // admin/first
 
 // url("admin/first") // admin/first
@@ -63,7 +65,7 @@ Route::name("admint.")->prefix("admin")->middleware(['age'])->group( function()
         Route::get('/second',function(Illuminate\Http\Request $request)  
         {  
             print_r($request->all());die;
-            
+
             echo "second route";  
         })->name("second");  
         Route::get('/third',function()  
