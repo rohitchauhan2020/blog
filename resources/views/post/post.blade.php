@@ -54,7 +54,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
 <p>We have created an inline form that will stay horizontal until the screen width of the browser window is less than 850 pixels: then the form is displayed vertically instead of horizontally.</p>
 <p>Resize the browser window to see the effect.</p>
 
-<form class="form-inline" action="{{route('posts.store')}}" method="post">
+<form class="form-inline" action="{{route('posts.index')}}" method="post">
     <input type="hidden" name="_token" value="{{csrf_token()}}">
   <label for="email">Author Name:</label>
   <input type="text" id="name" placeholder="Enter name" name="name">
