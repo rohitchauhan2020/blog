@@ -38,15 +38,15 @@ Route::prefix("admin")->group( function()
 {  
         Route::get('/list',function()  
         {  
-            echo "prifx first route";  
+            echo "first group route";  
         });  
         Route::get('/detail',function()  
         {  
-            echo "second route";  
+            echo "second group route";  
         });  
         Route::get('/edit',function()  
         {  
-            echo "third route";  
+            echo "third group route";  
         });
 });
 
@@ -60,17 +60,17 @@ Route::name("admint.")->prefix("admin")->middleware(['age'])->group( function()
 {  
         Route::get('/first',function()  
         {  
-            echo "named first route";  
+            echo "we r in first route using middleware";  
         })->name("first");  
         Route::get('/second',function(Illuminate\Http\Request $request)  
         {  
             print_r($request->all());die;
 
-            echo "second route";  
+            echo "we r in second route using middleware";  
         })->name("second");  
         Route::get('/third',function()  
         {  
-            echo "third route";  
+            echo "we r in third route using middleware";  
         })->name("third");
 });
 
