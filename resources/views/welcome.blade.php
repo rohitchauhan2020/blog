@@ -88,6 +88,7 @@
                 <?php 
                     $name = "Rohit Chauhan";
                     $vill = "Puranpur";
+                  //  echo"$name<br>";
 
 
                 ?>
