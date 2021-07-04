@@ -51,6 +51,7 @@ Route::prefix("admin")->group( function()
 });
 
 Route::resource('posts', PostsController::class);
+Route::get('posts/delete/{id}', 'Postscontroller@destroy')->name('posts.delete');
 
 // route("admint.first") // admin/first
 

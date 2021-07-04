@@ -107,6 +107,8 @@
                     <a href="{{url('admin/list')}}">Admin First Route</a>
 
                     <a href="{{route('admint.first')}}">Named Admin First Route</a>
+                    <a href="{{route('posts.index')}}">Posts</a>
+                    
 
                     
 

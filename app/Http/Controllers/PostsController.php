@@ -14,7 +14,11 @@ class PostsController extends Controller
      */
     public function index()
     {
-        return view('post.post');
+        $list = Post::all();
+        
+        return view("post.list")->with("post",$list);
+
+        //return view('post.post');
     }
 
     /**
@@ -24,7 +28,7 @@ class PostsController extends Controller
      */
     public function create()
     {
-        //
+        return view('post.post');
     }
 
     /**
@@ -42,7 +46,7 @@ class PostsController extends Controller
         $post->content = $request->content;
         $post->save();
         
-        echo "success";die;
+      return redirect()->route("posts.index");
 
     }
 
@@ -65,7 +69,10 @@ class PostsController extends Controller
      */
     public function edit($id)
     {
-        //
+        
+        $post = Post::findOrFail($id);
+        
+        return view('post.edit')->with("post", $post);
     }
 
     /**
@@ -77,7 +84,14 @@ class PostsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $data = $request->all();
+
+        Post::updateOrCreate(['id' => $id], [
+            "name" => $data['name'],
+            "content" => $data['content']
+        ]);
+
+        return redirect()->route("posts.index");
     }
 
     /**
@@ -88,6 +102,8 @@ class PostsController extends Controller
      */
     public function destroy($id)
     {
-        //
+       
+        Post::destroy($id);
+        return redirect()->route("posts.index");
     }
 }
